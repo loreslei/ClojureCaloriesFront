@@ -2,14 +2,14 @@
 <html lang="pt-br" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clojure Calories</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="icon" href="assets/logo.png">
+    <link rel="icon" href="assets/logo.png" />
     <script src="https://kit.fontawesome.com/16fe6351cd.js" crossorigin="anonymous"></script>
     <style>
         body {
@@ -18,38 +18,86 @@
     </style>
 </head>
 
-<body class="bg-slate-300 overflow-x-hidden">
+<body class="bg-slate-100 overflow-x-hidden">
+    <div class="w-screen fixed top-0 h-15 bg-indigo-500 flex items-center">
+        <div class="flex items-center justify-between flex-wrap w-screen">
+            <div class="w-screen flex justify-between items-center lg:hidden">
+                <a class="flex items-center" href="#user">
+                    <div class="h-10 flex items-center ml-4 gap-2">
+                        <img class="w-10 rounded-full" src="assets/logo.png" alt="" />
+                        <p class="text-white font-semibold">Clojure Calories</p>
+                    </div>
+                </a>
 
-    <div class="w-screen flex-wrap fixed top-0 h-15 bg-indigo-500 flex items-center justify-between">
-        <a class="flex items-center" href="#user">
-            <div class="h-10 flex items-center ml-4 gap-2">
-                <img class="w-10 rounded-full" src="assets/logo.png" alt="">
-                <p class="text-white font-semibold">Clojure Calories</p>
+                <button id="Menu" class="cursor-pointer">
+                    <div id="IconBars">
+                        <i
+                            class="fa-solid fa-bars text-white text-lg mr-7 rounded-xl px-3 py-2 transition-all duration-500 hover:bg-indigo-300"></i>
+                    </div>
+                    <div id="IconClose" class="hidden"><i
+                            class="fa-solid fa-xmark text-white text-2xl mr-7 rounded-xl px-3 py-2 transition-all duration-500 hover:bg-indigo-300"></i>
+                    </div>
+
+
+                </button>
+
             </div>
-        </a>
-        <a href="#user"
-            class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
-            <i class="fa-solid fa-user text-white"></i>
-            <p class="flex items-center text-white">Usuário</p>
-        </a>
 
-        <a href="#calories"
-            class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
-            <i class="fa-solid fa-weight-scale text-white"></i>
-            <p class="flex items-center text-white">Alimentos & Exercícios</p>
-        </a>
 
-        <a href="#results"
-            class="flex items-center gap-2 mr-5 rounded-xl transition-all duration-500 px-6 cursor-pointer py-2 hover:bg-indigo-300">
-            <i class="fa-solid fa-check-to-slot text-white"></i>
-            <p class="flex items-center text-white">Resultados</p>
-        </a>
+            <div id="MenuOculto" class="hidden w-screen flex flex-col bg-indigo-500 fixed top-15 p-3 lg:hidden">
+                <a id="close1" href="#user"
+                    class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
+                    <i class="fa-solid fa-user text-white"></i>
+                    <p class="flex items-center text-white">Usuário</p>
+                </a>
 
+                <a id="close2" href="#calories"
+                    class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
+                    <i class="fa-solid fa-weight-scale text-white"></i>
+                    <p class="flex items-center text-white">Alimentos & Exercícios</p>
+                </a>
+
+                <a id="close3" href="#results"
+                    class="flex items-center gap-2 mr-5 rounded-xl transition-all duration-500 px-6 cursor-pointer py-2 hover:bg-indigo-300">
+                    <i class="fa-solid fa-check-to-slot text-white"></i>
+                    <p class="flex items-center text-white">Resultados</p>
+                </a>
+            </div>
+
+            <div class="hidden w-screen lg:flex justify-between">
+                <a class="flex items-center" href="#user">
+                    <div class="h-10 flex items-center ml-4 gap-2">
+                        <img class="w-10 rounded-full" src="assets/logo.png" alt="" />
+                        <p class="text-white font-semibold">Clojure Calories</p>
+                    </div>
+                </a>
+
+                <a href="#user"
+                    class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
+                    <i class="fa-solid fa-user text-white"></i>
+                    <p class="flex items-center text-white">Usuário</p>
+                </a>
+
+                <a href="#calories"
+                    class="flex items-center gap-2 rounded-xl px-6 py-2 transition-all duration-500 cursor-pointer hover:bg-indigo-300">
+                    <i class="fa-solid fa-weight-scale text-white"></i>
+                    <p class="flex items-center text-white">Alimentos & Exercícios</p>
+                </a>
+
+                <a href="#results"
+                    class="flex items-center gap-2 mr-5 rounded-xl transition-all duration-500 px-6 cursor-pointer py-2 hover:bg-indigo-300">
+                    <i class="fa-solid fa-check-to-slot text-white"></i>
+                    <p class="flex items-center text-white">Resultados</p>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div id="user" class="flex h-screen w-screen items-center justify-center bg-white">
-        <div class="w-1/3 rounded-2xl py-6 px-12 shadow-2xl">
-            <h1 class="text-center font-semibold text-slate-700 text-2xl">Informações Pessoais</h1>
+    <div id="user" class="flex h-screen w-screen items-center justify-center mt-30 3xl:mt-0">
+        <div class="w-85/100 rounded-2xl py-6 px-12 shadow-2xl bg-white md:w-1/2 lg:w-1/3">
+            <h1 class="text-center font-semibold text-slate-700 text-2xl">
+                Informações Pessoais
+            </h1>
             <div class="my-5 flex flex-col gap-4">
                 <div>
                     <p class="p-2 text-slate-600 font-semibold">Nome*</p>
@@ -63,7 +111,6 @@
                             placeholder="Nome" />
                     </div>
                 </div>
-
 
                 <div>
                     <p class="p-2 text-slate-600 font-semibold">Gênero*</p>
@@ -80,7 +127,6 @@
                     </div>
                 </div>
 
-
                 <div>
                     <p class="p-2 text-slate-600 font-semibold">Idade*</p>
                     <div class="flex items-center">
@@ -88,9 +134,9 @@
                             class="h-10 w-11 rounded-l-xl border-y-1 border-l-1 border-slate-300 p-2 flex items-center justify-center">
                             <i class="fa-solid fa-calendar-days text-slate-700"></i>
                         </div>
-                        <input type='number'
+                        <input type="number"
                             class="h-10 w-full rounded-r-xl border-1 border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
-                            placeholder="Idade" min='0' max='120' required />
+                            placeholder="Idade" min="0" max="120" required />
                     </div>
                 </div>
 
@@ -101,9 +147,9 @@
                             class="h-10 w-11 rounded-l-xl border-y-1 border-l-1 border-slate-300 p-2 flex items-center justify-center">
                             <i class="fa-solid fa-ruler text-slate-700"></i>
                         </div>
-                        <input type='number'
+                        <input type="number"
                             class="h-10 w-full rounded-r-xl border-1 border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
-                            placeholder="Altura(cm)" min='0' max='300' required />
+                            placeholder="Altura(cm)" min="0" max="300" required />
                     </div>
                 </div>
 
@@ -114,22 +160,25 @@
                             class="h-10 w-11 rounded-l-xl border-y-1 border-l-1 border-slate-300 p-2 flex items-center justify-center">
                             <i class="fa-solid fa-weight-scale text-slate-700"></i>
                         </div>
-                        <input type='number'
+                        <input type="number"
                             class="h-10 w-full rounded-r-xl border-1 border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
-                            placeholder="Peso(kg)" min='0' required />
+                            placeholder="Peso(kg)" min="0" required />
                     </div>
                 </div>
 
-                <button
-                    class="transition-all mt-3 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">Enviar</button>
+                <button type="submit"
+                    class="transition-all mt-3 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">
+                    Enviar
+                </button>
             </div>
         </div>
     </div>
 
-
-    <div id="calories" class="flex h-screen w-screen items-center justify-center bg-white">
-        <div class="w-1/3 rounded-2xl py-6 px-12 shadow-2xl">
-            <h1 class="text-center font-semibold text-slate-700 text-2xl">Registrar Alimentos ou Exercícios</h1>
+    <div id="calories" class="flex h-screen mt-5 w-screen items-center mt-20 justify-center">
+        <div class="w-85/100 rounded-2xl py-6 px-12 shadow-2xl bg-white md:w-1/2 lg:w-1/3">
+            <h1 class="text-center font-semibold text-slate-700 text-2xl">
+                Registrar Alimentos ou Exercícios
+            </h1>
             <div class="my-5 flex flex-col gap-4">
                 <div class="">
                     <p class="p-2 text-slate-600 font-semibold">Alimento</p>
@@ -157,30 +206,48 @@
                     </div>
                 </div>
 
-
-
-
-
-                <button
-                    class="transition-all mt-3 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">Enviar</button>
+                <button type="submit"
+                    class="transition-all mt-3 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">
+                    Enviar
+                </button>
             </div>
         </div>
     </div>
 
-    <div id="results" class="flex h-screen w-screen items-center justify-center bg-white">
-        <div class="w-1/3 rounded-2xl py-6 px-12 shadow-2xl">
-            <h1 class="text-center font-semibold text-slate-700 text-2xl">Resultados das Últimas Operações</h1>
+    <div id="results" class="flex h-screen w-screen items-center justify-center">
+        <div class="w-85/100 rounded-2xl py-6 px-12 shadow-2xl bg-white md:w-1/2 lg:w-1/3">
+            <h1 class="text-center font-semibold text-slate-700 text-2xl">
+                Resultados das Últimas Operações
+            </h1>
             <ul class="text-center mt-3">
-                <li class="font-medium text-emerald-600"> + Ganhou 230 calorias de Hambúrguer</li>
-                <li class="font-medium text-rose-600"> - Perdeu 100 calorias de 15 minutos Correndo</li>
+                <li class="font-medium text-emerald-600">
+                    + Ganhou 230 calorias de Hambúrguer
+                </li>
+                <li class="font-medium text-rose-600">
+                    - Perdeu 100 calorias de 15 minutos Correndo
+                </li>
             </ul>
-
-
         </div>
     </div>
 
+    <script>
+
+        const toggleElements = () => {
+            document.getElementById("MenuOculto").classList.toggle('hidden');
+            document.getElementById("IconBars").classList.toggle('hidden');
+            document.getElementById("IconClose").classList.toggle('hidden');
+        };
+
+        document.getElementById('Menu').onclick = toggleElements;
+
+        ['close1', 'close2', 'close3'].forEach(id => {
+            document.getElementById(id).onclick = toggleElements;
+        });
 
 
+
+
+    </script>
 </body>
 
 </html>
