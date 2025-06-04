@@ -204,17 +204,23 @@
 
             <!-- component -->
 
-            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                <input type="checkbox" name="toggle" id="toggle"
+            <div class="flex justify-center mt-2 py-3">
+
+                <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                <input id="Switch" type="checkbox" name="toggle" id="toggle"
                     class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer" />
                 <label for="toggle"
                     class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
             </div>
-            <label for="toggle" class="text-xs text-gray-700">Alimento</label>
-            <label for="toggle" class="text-xs hidden text-gray-700">Exercício</label>
+            <label id="foodLabel" for="toggle" class="text-sm text-gray-700">Alimento</label>
+            <label id="exerciseLabel" for="toggle" class="hidden text-sm text-gray-700">Exercício</label>
 
-            <div class="my-5 flex flex-col gap-4">
-                <div class="">
+            </div>
+
+            
+
+            <div class="flex flex-col gap-4">
+                <div id="Food" >
                     <p class="p-2 text-slate-600 font-semibold">Alimento</p>
                     <div class="flex items-center">
                         <div
@@ -227,7 +233,7 @@
                     </div>
                 </div>
 
-                <div class="">
+                <div id="Exercise" class="hidden">
                     <p class="p-2 text-slate-600 font-semibold">Exercício</p>
                     <div class="flex items-center">
                         <div
@@ -271,132 +277,353 @@
                 </li>
             </ul>
             <hr class="text-slate-400">
-            <h2 class="text-center p-3 text-slate-700"><span class="font-bold text-lg text-indigo-700">Total:</span>
-                <span class="font-semibold">490</span> calorias
+            <h2 class="text-center p-3 text-slate-700"><span class="text-lg">Total:</span>
+                <span class="font-semibold">490</span> cal
             </h2>
         </div>
 
 
-        <!-- component -->
-        <div class="w-85/100 rounded-2xl flex flex-col items-center mt-40 py-6 px-12 shadow-2xl bg-white md:w-1/2 lg:w-1/3 mx-auto">
+        
+        
+        
+        
+    </div>
+    
+    
+    <!-- tabela -->
+    <div class="w-85/100 rounded-lg bg-white flex flex-col items-center mt-20 mb-20 shadow-2xl md:w-1/2 lg:w-1/3 mx-auto">
 
-            <h1 class="text-center font-semibold text-slate-700 text-2xl mb-3">
-                Todas as Operações
-            </h1>
 
-            <div
-                class="relative flex flex-col w-full h-full overflow-none text-gray-700 bg-white shadow-md rounded-lg">
+
+        <div
+                class="relative flex flex-col w-full h-full overflow-auto text-gray-700 bg-white rounded-t-lg">
                 <table class="w-full text-left table-auto min-w-max appearance-none">
                     <thead class="rounded-xl">
                         <tr>
                             <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm font-normal leading-none text-slate-500">
-                                    Data
+                                <p class="text-sm leading-none text-slate-700">
+                                    Tipo Calórico
                                 </p>
                             </th>
                             <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm font-normal leading-none text-slate-500">
+                                <p class="text-sm leading-none text-slate-700">
                                     Nome
                                 </p>
                             </th>
                             <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm font-normal leading-none text-slate-500">
+                                <p class="text-sm leading-none text-slate-700">
                                     Calorias
                                 </p>
                             </th>
                             <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm font-normal leading-none text-slate-500">
-                                    Tipo Calórico
+                                <p class="text-sm leading-none text-slate-700">
+                                    Data
                                 </p>
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="divide-y divide-gray-100">
+
+                        <!-- Linhas -->
                         <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3">
-                                <p class="block font-semibold text-sm text-slate-800">PROJ1001</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">John Doe</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">$1,200.00</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">2024-08-01</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
                             </td>
                         </tr>
+
                         <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3">
-                                <p class="block font-semibold text-sm text-slate-800">PROJ1002</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">Jane Smith</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">$850.00</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">2024-08-05</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
                             </td>
                         </tr>
+
+                           <!-- Linhas -->
                         <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3">
-                                <p class="block font-semibold text-sm text-slate-800">PROJ1003</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">Acme Corp</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">$2,500.00</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">2024-08-07</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
                             </td>
                         </tr>
+
                         <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3">
-                                <p class="block font-semibold text-sm text-slate-800">PROJ1004</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">Global Inc</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">$4,750.00</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
                             </td>
-                            <td class="p-4 py-3">
-                                <p class="text-sm text-slate-500">2024-08-10</p>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
                             </td>
                         </tr>
+
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+   <!-- Linhas -->
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Hambúrguer</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">200</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50 border-b border-slate-200">
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">Corrida</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm font-semibold text-slate-700">150</p>
+                            </td>
+                            <td class="p-4 py-3 whitespace-nowrap">
+                                <p class="text-sm text-slate-700">04/06/2025</p>
+                            </td>
+                        </tr>
+                       
+
+                       
+      
+           
                     </tbody>
                 </table>
 
-                <div class="flex justify-between items-center px-4 py-3">
-                    <div class="text-sm text-slate-500">
-                        Showing <b>1-5</b> of 45
-                    </div>
-                    <div class="flex space-x-1">
-                        <button
-                            class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                            Prev
-                        </button>
-                        <button
-                            class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-white bg-slate-800 border border-slate-800 rounded hover:bg-slate-600 hover:border-slate-600 transition duration-200 ease">
-                            1
-                        </button>
-                        <button
-                            class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                            2
-                        </button>
-                        <button
-                            class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                            3
-                        </button>
-                        <button
-                            class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                            Next
-                        </button>
-                    </div>
+            </div>
+            <div class="flex flex-col gap-3 md:flex-row justify-between items-center px-4 py-3">
+                <div class="text-sm text-slate-500">
+                    Resultados <b>1-5</b> de <span id="totalPages">45</span> página(s)
+                </div>
+                <div class="flex space-x-1" id="pagination">
+                    <button id="prevBtn"
+                        class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+                        Anterior
+                    </button>
+                    <button id="nextBtn"
+                        class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+                        Próximo
+                    </button>
                 </div>
             </div>
 
@@ -405,13 +632,8 @@
 
 
 
-        </div>
-
-
-
-
     </div>
-
+    
     <script>
 
         const toggleElements = () => {
@@ -420,11 +642,108 @@
             document.getElementById("IconClose").classList.toggle('hidden');
         };
 
+        const changeType = () => {
+            document.getElementById("Food").classList.toggle('hidden');
+            document.getElementById("Exercise").classList.toggle('hidden');
+            document.getElementById("foodLabel").classList.toggle('hidden');
+            document.getElementById("exerciseLabel").classList.toggle('hidden');
+        };
+
         document.getElementById('Menu').onclick = toggleElements;
+        document.getElementById('Switch').addEventListener('change', changeType);
 
         ['close1', 'close2', 'close3'].forEach(id => {
             document.getElementById(id).onclick = toggleElements;
         });
+
+
+
+        const rowsPerPage = 5;
+        let currentPage = 1;
+
+        const tbody = document.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        const paginationContainer = document.getElementById("pagination");
+
+        function renderRows() {
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            rows.forEach((row, i) => {
+            row.style.display = i >= start && i < end ? "" : "none";
+            });
+
+            const resultInfo = document.querySelector(".text-sm.text-slate-500 b");
+            if (resultInfo) {
+            resultInfo.innerText = `${start + 1}-${Math.min(end, rows.length)}`;
+            }
+        }
+
+        function updatePaginationButtons() {
+            // Remove antigos botões de página
+            paginationContainer.querySelectorAll(".page-btn").forEach(btn => btn.remove());
+
+            const nextBtn = document.getElementById("nextBtn");
+
+            let startPage = Math.max(1, Math.min(currentPage - 1, totalPages - 2));
+            let endPage = Math.min(startPage + 2, totalPages);
+
+            // Garante sempre 3 botões, se possível
+            if (endPage - startPage < 2) {
+            startPage = Math.max(1, endPage - 2);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.className =
+                `page-btn px-3 py-1 min-w-9 min-h-9 text-sm font-normal rounded transition duration-200 ease ${
+                i === currentPage
+                    ? "text-white bg-slate-800 border border-slate-800"
+                    : "text-slate-500 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-400"
+                }`;
+            btn.dataset.page = i;
+
+            paginationContainer.insertBefore(btn, nextBtn);
+            }
+
+            document.getElementById("prevBtn").disabled = currentPage === 1;
+            document.getElementById("nextBtn").disabled = currentPage === totalPages;
+            document.getElementById("totalPages").innerHTML = totalPages;
+        }
+
+        function showPage(page) {
+            currentPage = page;
+            renderRows();
+            updatePaginationButtons();
+        }
+
+        // Botões Anterior / Próximo
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            if (currentPage > 1) {
+            showPage(currentPage - 1);
+            }
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            if (currentPage < totalPages) {
+            showPage(currentPage + 1);
+            }
+        });
+
+        // Botões numerados dinâmicos
+        paginationContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("page-btn")) {
+            const page = parseInt(e.target.dataset.page);
+            showPage(page);
+            }
+        });
+
+        // Inicializa
+        renderRows();
+        updatePaginationButtons();
 
 
 
