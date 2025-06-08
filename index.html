@@ -205,53 +205,134 @@
             <!-- component -->
 
             <div class="flex justify-center mt-2 gap-3 py-3">
-            <label id="foodLabel" for="toggle" class="text-sm text-gray-700 font-bold">Alimento</label>
+                <label id="foodLabel" for="toggle" class="text-sm text-gray-700 font-bold">Alimento</label>
 
                 <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
-                <input id="Switch" type="checkbox" name="toggle" id="toggle"
-                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer" />
-                <label for="toggle"
-                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-            </div>
-            <label id="exerciseLabel" for="toggle" class="text-sm text-gray-700">Exercício</label>
+                    <input id="Switch" type="checkbox" name="toggle" id="toggle"
+                        class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer" />
+                    <label for="toggle"
+                        class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
+                <label id="exerciseLabel" for="toggle" class="text-sm text-gray-700">Exercício</label>
 
             </div>
 
-            
+
+
+
+
+
+
 
             <div class="flex flex-col gap-4">
-                <div id="Food" >
-                    <p class="p-2 text-slate-600 font-semibold">Alimento</p>
-                    <div class="flex items-center">
-                        <div
-                            class="h-10 w-11 rounded-l-xl border-y-1 border-l-1 border-slate-300 p-2 flex items-center justify-center">
-                            <i class="fa-solid fa-burger text-slate-700"></i>
+                <div id="Food">
+                    <div class="flex items-center gap-2">
+                        <p class="p-2 text-slate-600 font-semibold">Alimento</p>
+
+                        <!-- Ícone com Tooltip -->
+                        <div class="relative group cursor-pointer">
+                            <i
+                                class="fa-solid fa-circle-info text-slate-600 transition-all duration-200 hover:text-indigo-500"></i>
+                            <div
+                                class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-gray-800 text-white text-sm p-3 rounded-lg shadow-lg z-10">
+                                Escreva no formato:<br />
+                                <span class="text-indigo-300 font-medium">Nome do alimento + quantidade
+                                    (gramas)</span><br /><br />
+                                <span class="block">Exemplos:</span>
+                                <div class="mt-1 ml-2">
+                                    • Milkshake 100g<br />
+                                    • Brigadeiro 250g
+                                </div>
+                            </div>
                         </div>
-                        <input
-                            class="h-10 w-full rounded-r-xl border-1 border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
-                            placeholder="Nome do Alimento e Porção" />
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        <!-- Input com ícone -->
+                        <div class="flex items-center">
+                            <div
+                                class="h-10 w-11 rounded-l-xl border-y border-l border-slate-300 p-2 flex items-center justify-center">
+                                <i class="fa-solid fa-burger text-slate-700"></i>
+                            </div>
+                            <input
+                                class="h-10 w-full rounded-r-xl border border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
+                                placeholder="Nome do Alimento e Quantidade" />
+                        </div>
+                        <p class="p-2 text-slate-600 font-semibold mt-3">Data</p>
+                        <div class="flex items-center">
+                            <div
+                                class="h-10 w-11 rounded-l-xl border-y border-l border-slate-300 p-2 flex items-center justify-center">
+                                <i class="fa-solid fa-calendar-week text-slate-700"></i>
+                            </div>
+                            <input type='date'
+                                class="h-10 w-full rounded-r-xl border border-slate-300 p-2 text-slate-600 focus:outline-indigo-600" />
+                        </div>
+                        <button type="submit"
+                            class="w-full transition-all mt-8 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">
+                            Enviar
+                        </button>
+
                     </div>
                 </div>
+            </div>
 
-                <div id="Exercise" class="hidden">
+            <div id="Exercise" class="hidden">
+                <div class="flex items-center gap-2">
                     <p class="p-2 text-slate-600 font-semibold">Exercício</p>
+
+                    <!-- Ícone com Tooltip -->
+                    <div class="relative group cursor-pointer">
+                        <i
+                            class="fa-solid fa-circle-info text-slate-600 transition-all duration-200 hover:text-indigo-500"></i>
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-gray-800 text-white text-sm p-3 rounded-lg shadow-lg z-10">
+                            Escreva no formato:<br />
+                            <span class="text-indigo-300 font-medium">Nome do exercício + duração
+                                (minutos)</span><br /><br />
+                            <span class="block">Exemplos:</span>
+                            <div class="mt-1 ml-2">
+                                • Corrida 60 min<br />
+                                • Futebol 60 min
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <!-- Input com ícone -->
                     <div class="flex items-center">
                         <div
-                            class="h-10 w-11 rounded-l-xl border-y-1 border-l-1 border-slate-300 p-2 flex items-center justify-center">
+                            class="h-10 w-11 rounded-l-xl border-y border-l border-slate-300 p-2 flex items-center justify-center">
                             <i class="fa-solid fa-dumbbell text-slate-700"></i>
                         </div>
                         <input
-                            class="h-10 w-full rounded-r-xl border-1 border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
+                            class="h-10 w-full rounded-r-xl border border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
                             placeholder="Tipo de Exercício e Duração" />
                     </div>
+                    <p class="p-2 text-slate-600 font-semibold mt-3">Data</p>
+                    <div class="flex items-center">
+                        <div
+                            class="h-10 w-11 rounded-l-xl border-y border-l border-slate-300 p-2 flex items-center justify-center">
+                            <i class="fa-solid fa-calendar-week text-slate-700"></i>
+                        </div>
+                        <input
+                            class="h-10 w-full rounded-r-xl border border-slate-300 p-2 text-slate-600 focus:outline-indigo-600"
+                            type="date" />
+                    </div>
+                    <button type="submit"
+                        class="w-full transition-all mt-8 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">
+                        Enviar
+                    </button>
+
                 </div>
 
-                <button type="submit"
-                    class="transition-all mt-3 h-10 cursor-pointer rounded-xl bg-indigo-500 p-2 font-semibold text-white duration-700 hover:bg-indigo-600">
-                    Enviar
-                </button>
             </div>
+
+
+
+
         </div>
+    </div>
     </div>
 
     <div id="results" class="flex mt-30 flex-col h-screen w-screen items-center justify-center">
@@ -283,97 +364,109 @@
         </div>
 
 
-        
-        
-        
-        
+
+
+
+
     </div>
-    
-    
+
+
     <!-- tabela -->
-    <div class="w-85/100 rounded-lg bg-white flex flex-col items-center mt-20 mb-20 shadow-2xl md:w-1/2 lg:w-1/3 mx-auto">
+    <div
+        class="w-85/100 rounded-lg bg-white flex flex-col items-center mt-20 mb-20 shadow-2xl md:w-1/2 lg:w-1/3 mx-auto">
 
 
 
-        <div
-                class="relative flex flex-col w-full h-full overflow-auto text-gray-700 bg-white rounded-t-lg">
-                <table class="w-full text-left table-auto min-w-max appearance-none">
-                    <thead class="rounded-xl">
-                        <tr>
-                            <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm leading-none text-slate-700">
-                                    Tipo Calórico
-                                </p>
-                            </th>
-                            <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm leading-none text-slate-700">
-                                    Nome
-                                </p>
-                            </th>
-                            <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm leading-none text-slate-700">
-                                    Calorias
-                                </p>
-                            </th>
-                            <th class="p-4 border-b border-slate-200 bg-slate-50">
-                                <p class="text-sm leading-none text-slate-700">
-                                    Data
-                                </p>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100">
+        <div class="relative flex flex-col w-full h-full overflow-auto text-gray-700 bg-white rounded-t-lg">
+            <table class="w-full text-left table-auto min-w-max appearance-none">
+                <thead class="rounded-xl">
+                    <tr>
+                        <th class="p-4 border-b border-slate-200 bg-slate-50">
+                            <p class="text-sm leading-none text-slate-700">
+                                Tipo Calórico
+                            </p>
+                        </th>
+                        <th class="p-4 border-b border-slate-200 bg-slate-50">
+                            <p class="text-sm leading-none text-slate-700">
+                                Nome
+                            </p>
+                        </th>
+                        <th class="p-4 border-b border-slate-200 bg-slate-50">
+                            <p class="text-sm leading-none text-slate-700">
+                                Calorias
+                            </p>
+                        </th>
+                        <th class="p-4 border-b border-slate-200 bg-slate-50">
+                            <p class="text-sm leading-none text-slate-700">
+                                Data
+                            </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
 
-                        <!-- Linhas -->
-                        <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <span class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm text-slate-700">Hambúrguer</p>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm font-semibold text-slate-700">200</p>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm text-slate-700">04/06/2025</p>
-                            </td>
-                        </tr>
+                    <!-- Linhas -->
+                    <tr class="hover:bg-slate-50 border-b border-slate-200">
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <span
+                                class="font-semibold uppercase bg-emerald-100 py-1 px-2 rounded text-sm text-emerald-800">Ganho</span>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm text-slate-700">Hambúrguer</p>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm font-semibold text-slate-700">200</p>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm text-slate-700">04/06/2025</p>
+                        </td>
+                    </tr>
 
-                        <tr class="hover:bg-slate-50 border-b border-slate-200">
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <span class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm text-slate-700">Corrida</p>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm font-semibold text-slate-700">150</p>
-                            </td>
-                            <td class="p-4 py-3 whitespace-nowrap">
-                                <p class="text-sm text-slate-700">04/06/2025</p>
-                            </td>
-                        </tr>
+                    <tr class="hover:bg-slate-50 border-b border-slate-200">
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <span
+                                class="font-semibold uppercase bg-red-100 py-1 px-2 rounded text-sm text-red-800">Perda</span>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm text-slate-700">Corrida</p>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm font-semibold text-slate-700">150</p>
+                        </td>
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm text-slate-700">04/06/2025</p>
+                        </td>
+                    </tr>
 
-                    </tbody>
-                </table>
+                    <tr class="hover:bg-slate-50 border-b border-slate-200">
+                        <td class="p-4 py-3 whitespace-nowrap">
+                            <span
+                                class="font-semibold uppercase bg-gray-200 py-1 px-2 rounded text-sm text-gray-800">Total</span>
+                        </td>
+                        <td colspan="3" class="p-4 py-3 whitespace-nowrap">
+                            <p class="text-sm text-center font-semibold text-slate-700">150 calorias</p>
+                        </td>
+                    </tr>
 
+                </tbody>
+            </table>
+
+        </div>
+        <div class="flex flex-col gap-3 md:flex-row justify-between items-center px-4 py-3">
+            <div class="text-sm text-slate-500">
+                Resultados <b>1-5</b> de <span id="totalPages">45</span> página(s)
             </div>
-            <div class="flex flex-col gap-3 md:flex-row justify-between items-center px-4 py-3">
-                <div class="text-sm text-slate-500">
-                    Resultados <b>1-5</b> de <span id="totalPages">45</span> página(s)
-                </div>
-                <div class="flex space-x-1" id="pagination">
-                    <button id="prevBtn"
-                        class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                        Anterior
-                    </button>
-                    <button id="nextBtn"
-                        class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-                        Próximo
-                    </button>
-                </div>
+            <div class="flex space-x-1" id="pagination">
+                <button id="prevBtn"
+                    class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+                    Anterior
+                </button>
+                <button id="nextBtn"
+                    class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+                    Próximo
+                </button>
             </div>
+        </div>
 
 
 
@@ -381,7 +474,7 @@
 
 
     </div>
-    
+
     <script>
 
         const toggleElements = () => {
@@ -420,12 +513,12 @@
             const end = start + rowsPerPage;
 
             rows.forEach((row, i) => {
-            row.style.display = i >= start && i < end ? "" : "none";
+                row.style.display = i >= start && i < end ? "" : "none";
             });
 
             const resultInfo = document.querySelector(".text-sm.text-slate-500 b");
             if (resultInfo) {
-            resultInfo.innerText = `${start + 1}-${Math.min(end, rows.length)}`;
+                resultInfo.innerText = `${start + 1}-${Math.min(end, rows.length)}`;
             }
         }
 
@@ -440,21 +533,20 @@
 
             // Garante sempre 3 botões, se possível
             if (endPage - startPage < 2) {
-            startPage = Math.max(1, endPage - 2);
+                startPage = Math.max(1, endPage - 2);
             }
 
             for (let i = startPage; i <= endPage; i++) {
-            const btn = document.createElement("button");
-            btn.textContent = i;
-            btn.className =
-                `page-btn px-3 py-1 min-w-9 min-h-9 text-sm font-normal rounded transition duration-200 ease ${
-                i === currentPage
-                    ? "text-white bg-slate-800 border border-slate-800"
-                    : "text-slate-500 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-400"
-                }`;
-            btn.dataset.page = i;
+                const btn = document.createElement("button");
+                btn.textContent = i;
+                btn.className =
+                    `page-btn px-3 py-1 min-w-9 min-h-9 text-sm font-normal rounded transition duration-200 ease ${i === currentPage
+                        ? "text-white bg-slate-800 border border-slate-800"
+                        : "text-slate-500 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-400"
+                    }`;
+                btn.dataset.page = i;
 
-            paginationContainer.insertBefore(btn, nextBtn);
+                paginationContainer.insertBefore(btn, nextBtn);
             }
 
             document.getElementById("prevBtn").disabled = currentPage === 1;
@@ -471,21 +563,21 @@
         // Botões Anterior / Próximo
         document.getElementById("prevBtn").addEventListener("click", () => {
             if (currentPage > 1) {
-            showPage(currentPage - 1);
+                showPage(currentPage - 1);
             }
         });
 
         document.getElementById("nextBtn").addEventListener("click", () => {
             if (currentPage < totalPages) {
-            showPage(currentPage + 1);
+                showPage(currentPage + 1);
             }
         });
 
         // Botões numerados dinâmicos
         paginationContainer.addEventListener("click", (e) => {
             if (e.target.classList.contains("page-btn")) {
-            const page = parseInt(e.target.dataset.page);
-            showPage(page);
+                const page = parseInt(e.target.dataset.page);
+                showPage(page);
             }
         });
 
